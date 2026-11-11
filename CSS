@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&display=swap');
 
 * {
     margin: 0;
@@ -8,249 +8,138 @@
 }
 
 body {
-    min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1b1035, #47205f, #9b477f);
+    height: 100vh;
+    overflow: hidden;
+    background: #100b13;
     color: white;
-    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 45%,
+        #54243f 0%,
+        #281525 40%,
+        #100b13 80%);
+}
+
+.hero {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 20px;
 }
 
-.container {
-    width: 90%;
-    max-width: 750px;
-    margin: auto;
-    padding: 65px 15px;
-}
-
-.tag {
-    display: inline-block;
-    padding: 10px 20px;
-    border: 1px solid #ffb6dc;
-    border-radius: 30px;
-    color: #ffc7e5;
-    font-size: 11px;
-    letter-spacing: 3px;
-    margin-bottom: 25px;
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 7px;
+    color: #e8b6ca;
+    margin-bottom: 35px;
+    animation: fade 2s ease;
 }
 
 h1 {
-    font-size: clamp(42px, 8vw, 75px);
-    color: #ffd2e8;
     font-family: 'Great Vibes', cursive;
-    text-shadow: 0 0 25px #ff80c0;
+    font-size: clamp(55px, 10vw, 115px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fce5ef;
+    text-shadow: 0 0 35px #e88bb966;
+    animation: reveal 2s ease;
 }
 
-h2 {
-    font-size: clamp(20px, 5vw, 32px);
-    margin: 10px 0;
+h1 span {
+    display: block;
+    font-size: clamp(38px, 7vw, 80px);
+    color: #e9a6c1;
+    margin-top: 15px;
 }
 
-.intro {
-    max-width: 520px;
-    margin: 20px auto;
-    color: #f5d9ee;
-    line-height: 1.8;
-    font-size: 14px;
-}
-
-/* Birthday Cake */
-
-.cake {
-    position: relative;
-    width: 180px;
-    height: 160px;
-    margin: 55px auto 20px;
-}
-
-.cake-bottom {
-    position: absolute;
-    bottom: 0;
-    width: 180px;
-    height: 75px;
-    background: linear-gradient(90deg, #ff8bbd, #ffc5dc);
-    border-radius: 12px 12px 20px 20px;
-    box-shadow: 0 12px 25px #0005;
-}
-
-.cake-top {
-    position: absolute;
-    bottom: 65px;
-    left: 10px;
-    width: 160px;
-    height: 35px;
-    background: #ffe4ed;
-    border-radius: 50%;
-    z-index: 2;
-}
-
-.icing {
-    position: absolute;
-    bottom: 45px;
-    left: 10px;
-    width: 160px;
-    height: 35px;
-    border-radius: 0 0 15px 15px;
-    background: #ffb6d2;
-    z-index: 3;
-}
-
-.candle {
-    position: absolute;
-    bottom: 100px;
-    left: 84px;
-    width: 12px;
-    height: 38px;
-    background: repeating-linear-gradient(
-        45deg,
-        #fff,
-        #fff 5px,
-        #ff69a8 5px,
-        #ff69a8 10px
+.line {
+    width: 90px;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #e9a6c1,
+        transparent
     );
-    z-index: 5;
+    margin-top: 40px;
+    animation: expand 2s ease;
 }
 
-.flame {
-    position: absolute;
-    top: -19px;
-    left: 2px;
-    width: 9px;
-    height: 18px;
-    background: #ffdf65;
-    border-radius: 50%;
-    box-shadow: 0 0 20px #ffbd45;
-    animation: flicker 0.5s infinite alternate;
-}
-
-@keyframes flicker {
-    from { transform: scale(1); }
-    to { transform: scale(1.2) rotate(8deg); }
-}
-
-.wish {
-    color: #ffd6ed;
-    margin: 15px;
-    font-size: 16px;
-}
-
-button {
-    padding: 15px 28px;
-    border: none;
-    border-radius: 35px;
-    background: linear-gradient(90deg, #ff72b6, #ffb0d5);
-    color: #421637;
-    font-weight: 700;
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 0 5px 25px #ff72b655;
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px #ff72b688;
-}
-
-.envelope {
-    margin: 55px auto 20px;
-    padding: 25px;
-    max-width: 300px;
-    background: #ffffff15;
-    border: 1px solid #ffffff40;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.envelope:hover {
-    background: #ffffff25;
-    transform: scale(1.04);
-}
-
-.envelope-icon {
-    font-size: 55px;
-}
-
-.envelope p {
-    color: #ffd6ed;
-    margin-top: 10px;
-}
-
-.letter {
-    display: none;
-    margin: 30px auto;
-    padding: 35px 25px;
-    max-width: 550px;
-    background: #fff1f7;
-    color: #61294d;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px #0004;
-    line-height: 2;
-    animation: appear 0.7s ease;
-}
-
-.letter h2 {
-    color: #d34b91;
-    font-family: 'Great Vibes', cursive;
-    font-size: 35px;
-}
-
-.letter p {
-    margin: 15px 0;
-    font-size: 14px;
-}
-
-.letter h3 {
-    color: #e44f96;
-    margin-top: 20px;
-}
-
-.signature {
+.heart {
+    font-size: 30px;
+    color: #e9a6c1;
     margin-top: 25px;
-    font-style: italic;
+    animation: pulse 2s infinite;
 }
 
-@keyframes appear {
+.particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    bottom: -30px;
+    color: #f4b8d0;
+    opacity: 0;
+    animation: float 10s linear infinite;
+}
+
+@keyframes reveal {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(35px);
+        filter: blur(10px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
+        filter: blur(0);
     }
 }
 
-footer {
-    margin-top: 65px;
-    font-size: 12px;
-    color: #e9b9d9;
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Floating decorations */
-
-.decoration {
-    position: fixed;
-    bottom: -30px;
-    pointer-events: none;
-    animation: floatUp 6s linear forwards;
-    z-index: 10;
+@keyframes expand {
+    from { width: 0; }
+    to { width: 90px; }
 }
 
-@keyframes floatUp {
-    to {
+@keyframes pulse {
+    50% { transform: scale(1.2); }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% { opacity: 0.6; }
+    85% { opacity: 0.4; }
+    100% {
         transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
     }
 }
 
 @media(max-width: 500px) {
-    .container {
-        padding-top: 45px;
-    }
-
-    .letter {
-        padding: 25px 18px;
+    .eyebrow {
+        letter-spacing: 4px;
+        font-size: 8px;
     }
 }
