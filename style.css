@@ -143,3 +143,29 @@ h1 span {
         font-size: 8px;
     }
 }
+
+.blessing {
+    max-width: 480px;
+    margin-top: 30px;
+    color: #e8cedb;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    animation: fade 3s ease;
+}
+
+.signature {
+    margin-top: 15px;
+    color: #d9a6bd;
+    font-family: 'Great Vibes', cursive;
+    font-size: 27px;
+}
+
+@media(max-width: 500px) {
+    .blessing {
+        font-size: 12px;
+        padding: 0 12px;
+    }
+}
+
